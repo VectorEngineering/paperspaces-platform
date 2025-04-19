@@ -1,8 +1,7 @@
 import { TeamMemberRole } from '@prisma/client';
-import type Stripe from 'stripe';
 
-import { transferTeamSubscription } from '@documenso/ee/server-only/stripe/transfer-team-subscription';
-import { mapStripeSubscriptionToPrismaUpsertAction } from '@documenso/ee/server-only/stripe/webhook/on-subscription-updated';
+import { transferTeamSubscription } from '@documenso/ee-stub/server-only/stripe/transfer-team-subscription';
+import { mapStripeSubscriptionToPrismaUpsertAction } from '@documenso/ee-stub/server-only/stripe/webhook/on-subscription-updated';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { prisma } from '@documenso/prisma';
 
@@ -61,20 +60,45 @@ export const transferTeamOwnership = async ({ token }: TransferTeamOwnershipOpti
         },
       });
 
-      let teamSubscription: Stripe.Subscription | null = null;
+      let teamSubscription: unknown = null;
 
       if (IS_BILLING_ENABLED()) {
         teamSubscription = await transferTeamSubscription({
           user: newOwnerUser,
-          team,
+          teamId: team.id,
           clearPaymentMethods: teamTransferVerification.clearPaymentMethods,
         });
       }
 
       if (teamSubscription) {
-        await tx.subscription.upsert(
-          mapStripeSubscriptionToPrismaUpsertAction(teamSubscription, undefined, team.id),
+        const subscriptionData = mapStripeSubscriptionToPrismaUpsertAction(
+          teamSubscription,
+          undefined,
+          team.id,
         );
+
+        await tx.subscription.upsert({
+          where: {
+            planId: 'team_plan',
+          },
+          create: {
+            planId: 'team_plan',
+            priceId: subscriptionData.priceId,
+            status: 'ACTIVE',
+            teamId: team.id,
+            cancelAtPeriodEnd: subscriptionData.cancelAtPeriodEnd,
+            createdAt: subscriptionData.created,
+            updatedAt: subscriptionData.updated,
+            periodEnd: subscriptionData.currentPeriodEnd,
+          },
+          update: {
+            priceId: subscriptionData.priceId,
+            status: 'ACTIVE',
+            cancelAtPeriodEnd: subscriptionData.cancelAtPeriodEnd,
+            updatedAt: subscriptionData.updated,
+            periodEnd: subscriptionData.currentPeriodEnd,
+          },
+        });
       }
 
       await tx.team.update({

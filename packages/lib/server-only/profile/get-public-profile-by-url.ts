@@ -6,7 +6,7 @@ import {
   type UserProfile,
 } from '@prisma/client';
 
-import { getCommunityPlanPriceIds } from '@documenso/ee/server-only/stripe/get-community-plan-prices';
+import { getCommunityPlanPriceIds } from '@documenso/ee-stub/server-only/stripe/get-community-plan-prices';
 import { prisma } from '@documenso/prisma';
 
 import { IS_BILLING_ENABLED } from '../../constants/app';
@@ -134,11 +134,16 @@ export const getPublicProfileByUrl = async ({
     if (IS_BILLING_ENABLED()) {
       const earlyAdopterPriceIds = await getCommunityPlanPriceIds();
 
-      const activeEarlyAdopterSub = user.subscriptions.find(
-        (subscription) =>
-          subscription.status === SubscriptionStatus.ACTIVE &&
-          earlyAdopterPriceIds.includes(subscription.priceId),
-      );
+      // We check for active subscriptions that match community plan IDs
+      const activeEarlyAdopterSub = user.subscriptions.find((subscription) => {
+        // First check if the subscription is active
+        if (subscription.status !== SubscriptionStatus.ACTIVE) {
+          return false;
+        }
+
+        // Then check if priceId exists in the community plans
+        return earlyAdopterPriceIds.some((id) => id === subscription.priceId);
+      });
 
       if (activeEarlyAdopterSub) {
         badge = {
