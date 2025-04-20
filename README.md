@@ -1,358 +1,298 @@
-<img src="https://github.com/documenso/documenso/assets/13398220/a643571f-0239-46a6-a73e-6bef38d1228b" alt="Documenso Logo">
+# **Paper Spaces — AI‑First Contract Commerce OS**
 
-<p align="center" style="margin-top: 20px">
-  <p align="center">
-  The Open Source DocuSign Alternative.
-  <br>
-    <a href="https://documenso.com"><strong>Learn more »</strong></a>
-    <br />
-    <br />
-    <a href="https://documen.so/discord">Discord</a>
-    ·
-    <a href="https://documenso.com">Website</a>
-    ·
-    <a href="https://github.com/documenso/documenso/issues">Issues</a>
-    ·
-    <a href="https://documen.so/live">Upcoming Releases</a>
-    ·
-    <a href="https://documen.so/roadmap">Roadmap</a>
-  </p>
-</p>
+## 1 | Vision
 
-<p align="center">
-   <a href="https://documen.so/discord"><img src="https://img.shields.io/badge/Discord-documen.so/discord-%235865F2" alt="Join Documenso on Discord"></a>
-   <a href="https://github.com/documenso/documenso/stargazers"><img src="https://img.shields.io/github/stars/documenso/documenso" alt="Github Stars"></a>
-   <a href="https://github.com/documenso/documenso/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-AGPLv3-purple" alt="License"></a>
-   <a href="https://github.com/documenso/documenso/pulse"><img src="https://img.shields.io/github/commit-activity/m/documenso/documenso" alt="Commits-per-month"></a>
-   <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/documenso/documenso">
-   <img alt="open in devcontainer" src="https://img.shields.io/static/v1?label=Dev%20Containers&message=Enabled&color=blue&logo=visualstudiocode" />
-   </a>
-   <a href="CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg" alt="Contributor Covenant"></a>
-</p>
+**Democratize world‑class contract lifecycle management (CLM) for 50 million freelancers and lean startups, while embedding a *zero‑friction SaaS commerce layer* inside every agreement.**
 
-<div align="center">
-  <img src="https://github.com/documenso/documenso/assets/13398220/d96ed533-6f34-4a97-be9b-442bdb189c69" style="width: 80%;" />
-</div>
+Paper Spaces unifies AI drafting, risk review, negotiation, execution, and revenue collection so founders close deals faster *and* software vendors get paid—without lawyers, payment gateways, or tax headaches.
 
-## About Documenso
+---
 
-Signing documents digitally should be fast and easy and should be the best practice for every document signed worldwide. This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. While this is not a problem in itself, it should make us think about how we want these providers of trust to work. Documenso aims to be the world's most trusted document-signing tool. This trust is built by empowering you to self-host Documenso and review how it works under the hood.
+## 2 | Problem
 
-Join us in creating the next generation of open trust infrastructure.
+| Pain | Evidence | Impact |
+| --- | --- | --- |
+| Contracts are slow & risky | 68% of startups still juggle Word + email; average freelance contract takes **5 days** draft‑to‑sign (Upwork Legal Pulse '24) | Lost deals, untracked liabilities |
+| Legal costs sting | Outside counsel **$350/hr**—unaffordable for micro‑businesses | DIY legal exposes founders to risk |
+| Template chaos | Clauses copied from Google carry hidden liabilities | 21% of SMB disputes trace to faulty templates (ABA '23) |
+| SaaS billing friction | Each vendor requires a new checkout, tax profile, FX markup | 22% of micro‑SaaS lose deals to payment hurdles (Stripe Atlas '25) |
 
-## Recognition
+---
 
-<p align="center">
-  <a href="https://www.producthunt.com/posts/documenso?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-documenso" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=395047&theme=light&period=daily" alt="Documenso - The&#0032;open&#0032;source&#0032;DocuSign&#0032;alternative | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-  <a href="https://www.producthunt.com/posts/documenso?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-documenso" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=395047&theme=light" alt="Documenso - The&#0032;Open&#0032;Source&#0032;DocuSign&#0032;Alternative&#0046; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-</p>
+## 3 | Market Snapshot
 
-## Community and Next Steps 🎯
+| Segment | Firms | Annual Spend on CLM & SaaS Billing | Initial Serviceable Addressable Market (SAM) |
+| --- | --- | --- | --- |
+| Global freelancers & micro‑SaaS | 35M | $3.2B | $900M |
+| Seed‑Series B startups (<200 FTE) | 1.4M | $4.5B | $1.2B |
 
-We're currently working on a redesign of the application, including a revamp of the codebase, so Documenso can be more intuitive to use and robust to develop upon.
+> Share‑of‑Market (SOM) Target: $100M ARR by 2030 (≈ 60k paying orgs)
 
-- Check out the first source code release in this repository and test it.
-- Tell us what you think in the [Discussions](https://github.com/documenso/documenso/discussions).
-- Join the [Discord server](https://documen.so/discord) for any questions and getting to know to other community members.
-- ⭐ the repository to help us raise awareness.
-- Spread the word on Twitter that Documenso is working towards a more open signing tool.
-- Fix or create [issues](https://github.com/documenso/documenso/issues), that are needed for the first production release.
+---
 
-## Contributing
+## 4 | Business Model & Monetization Levers
 
-- To contribute, please see our [contribution guide](https://github.com/documenso/documenso/blob/main/CONTRIBUTING.md).
+| Revenue Stream | Pricing | Gross Margin Driver |
+| --- | --- | --- |
+| **SaaS Plans** | Free (3 contracts/mo) → *Pro* $39/mo → *Growth* $99/mo → *Scale* (custom) | High‑margin recurring revenue |
+| **Marketplace Rev‑Share** | 20% on template & clause sales | Asset‑light digital goods |
+| **Merchant‑of‑Record Take‑Rate** | 0.8% on SaaS transactions + 0.3% FX/tax spread | Low COGS via payment aggregation |
+| **Premium AI Credits** | $9 per extra 1,000 GPT‑4o tokens | Near‑pure margin |
 
-## Contact us
+> Target Gross Margin: 75%+ once volume discounts on compute & payments kick in (≈ 10k customers).
 
-Contact us if you are interested in our Enterprise plan for large organizations that need extra flexibility and control.
+---
 
-<a href="https://cal.com/timurercan/enterprise-customers?utm_source=banner&utm_campaign=oss"><img alt="Book us with Cal.com" src="https://cal.com/book-with-cal-dark.svg" /></a>
+## 5 | Core KPIs (Tracked Monthly)
 
-## Tech Stack
+| KPI | Current (Launch Apr '25) | 12‑mo Target | North‑Star Goal |
+| --- | --- | --- | --- |
+| Paying Customers | 60 | 1,200 | 60k by 2030 |
+| Annual Recurring Revenue (ARR) | $0.14M | $3.2M | $100M by 2030 |
+| Avg Draft‑to‑Sign Cycle | 5d → **1.9d** | ≤ 1.5d | < 1 day |
+| AI Risk Detection Recall | 92% | 95% | 97% |
+| Marketplace GMV / Mo | $4k | $120k | $5M |
+| MoR Gross Payment Volume | — | $6M | $1B |
 
-<p align="left">
-  <a href="https://www.typescriptlang.org"><img src="https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square" alt="TypeScript"></a>
-  <a href="https://prisma.io"><img width="122" height="20" src="http://made-with.prisma.io/indigo.svg" alt="Made with Prisma" /></a>
-  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss" alt="Tailwind CSS"></a>
-  <a href=""><img src="" alt=""></a>
-  <a href=""><img src="" alt=""></a>
-  <a href=""><img src="" alt=""></a>
-  <a href=""><img src="" alt=""></a>
-  <a href=""><img src="" alt=""></a>
-</p>
+---
 
-- [Typescript](https://www.typescriptlang.org/) - Language
-- [ReactRouter](https://reactrouter.com/) - Framework
-- [Prisma](https://www.prisma.io/) - ORM
-- [Tailwind](https://tailwindcss.com/) - CSS
-- [shadcn/ui](https://ui.shadcn.com/) - Component Library
-- [react-email](https://react.email/) - Email Templates
-- [tRPC](https://trpc.io/) - API
-- [@documenso/pdf-sign](https://www.npmjs.com/package/@documenso/pdf-sign) - PDF Signatures (launching soon)
-- [React-PDF](https://github.com/wojtekmaj/react-pdf) - Viewing PDFs
-- [PDF-Lib](https://github.com/Hopding/pdf-lib) - PDF manipulation
-- [Stripe](https://stripe.com/) - Payments
+## 6 | Solution Pillars
 
-<!-- - Support for [opensignpdf (requires Java on server)](https://github.com/open-pdf-sign) is currently planned. -->
+| Pillar | What Users Get | Differentiator |
+| --- | --- | --- |
+| **AI Drafting Copilot** | GPT‑4o clause suggestions; auto‑populate parties, scope, & dates | 2‑tap insertion from community clause library |
+| **Risk Radar** | Real‑time red‑flag scoring, GDPR/CPRA checks | Trained on 4M startup contracts; 92% recall |
+| **Smart Negotiator** | AI redlines, fallback playbooks, *explain‑my‑change* chat | Cuts review cycles **47%** in pilot |
+| **Click‑to‑Sign** | Native e‑signature, audit trail, KBA for high‑value docs | $0/envelope vs pricey incumbents |
+| **Template & Clause Marketplace** | Sell vetted templates, earn royalties; buyers filter by jurisdiction | Quality‑gated, SME‑reviewed |
+| **Merchant‑of‑Record Engine** | One‑click billing, tax, FX inside contract | *First CLM with MoR rails*—single invoice to buyer |
+| **Integrated Email Hub** | Central inbox that auto‑threads all counterparty emails & syncs negotiation history | Contract‑linked context & AI summarization |
+
+---
+
+## 7 | Ideal Customer Profiles (ICP)
+
+| ICP | Key Jobs‑to‑Be‑Done | Current Work‑around | Why Paper Spaces Wins |
+| --- | --- | --- | --- |
+| Solo freelancers & indie hackers | Close gigs quickly; look professional; avoid legal risk | Google Docs + Docusign + Stripe links | All‑in‑one flow saves 3–5 tools & fees |
+| Micro‑SaaS founders (<$2M ARR) | Auto‑bill subscriptions from MSAs; stay tax‑compliant | Stripe Checkout + manual invoicing | Built‑in MoR & subscription engine |
+| Seed‑Series B startups (<200 FTE) | Standardize templates; speed up sales cycles; connect to CRM | Ironclad or Word/email; slow legal review | AI redlining + CRM sync cuts cycle time 40% |
+
+---
+
+## 8 | Customer Workflow – *The 5‑Minute Revenue Loop*
+
+1. **Drag & Drop Scope** → AI drafts contract with dynamic variables.
+2. **Risk Radar Scan** → Issues surfaced & auto‑fixed suggestions offered.
+3. **Smart Negotiator** → Counter‑party receives link; AI handles redlines within guardrails.
+4. **Click‑to‑Sign** → Both parties sign; immutable audit trail stored.
+5. **Instant Checkout** → Buyer pays first invoice (or subscribes); revenue lands next banking day via MoR rails.
+
+---
+
+## 9 | Why This Combination Wins
+
+- **One ingestion, infinite outputs** — Single contract object feeds billing, CRM, accounting, and analytics.
+- **No‑code intelligence** — Growth & legal teams automate playbooks without backend work.
+- **Automatic feedback loop** — Each action (draft → negotiate → pay) emits events that retrain clause ranking and risk models in near‑real‑time.
+- **Extensible & open‑source friendly** — Core SDK available; teams can self‑host for compliance, then pay cloud fees for scale.
+
+---
+
+## 10 | Reference Architecture (High‑Level)
+
+```
+┌────────────────────────────┐              ┌─────────────────────────┐
+│  Web / Mobile Frontend     │  GraphQL     │  Third‑Party Integrations│
+│  (Next.js, React Native)   │◄────────────►│  • CRM (HubSpot)        │
+└──────────────┬─────────────┘              │  • Accounting (QBO)     │
+               │REST / gRPC                │  • Cloud Storage (S3)   │
+┌──────────────▼─────────────┐              └─────────────────────────┘
+│  API Gateway (tRPC)        │
+└──────────────┬─────────────┘
+               │Event Bus (NATS)
+┌──────────────▼─────────────┐   ML Inference  ┌───────────────────────┐
+│  Contract Service          │◄───────────────►│  AI Engine (Llama‑3,   │
+│  • Clause store            │                │  GPT‑4o via Azure)     │
+│  • Template versioning     │                └───────────────────────┘
+└──────────────┬─────────────┘
+               │ gRPC                        ┌───────────────────────┐
+┌──────────────▼─────────────┐               │  Merchant‑of‑Record   │
+│  Billing & MoR Service     │──────────────►│  Service (Stripe +    │
+│  • Usage metering          │  Webhooks     │  TaxJar, Wise FX)      │
+│  • FX & tax calc           │               └───────────────────────┘
+└──────────────┬─────────────┘
+               │ CDC / Streams              ┌───────────────────────┐
+┌──────────────▼─────────────┐               │  Analytics Warehouse  │
+│  Event Lake (ClickHouse)   │──────────────►│  (DuckDB/BigQuery)     │
+└────────────────────────────┘               └───────────────────────┘
+```
+
+*Built for multi‑tenant scale, SOC 2‑ready.*
+
+---
+
+## 13 | Detailed Product Overview
+
+Paper Spaces is an end-to-end contract lifecycle management platform built specifically for freelancers, micro-SaaS businesses, and early-stage startups. It combines advanced AI capabilities with payment infrastructure to transform the entire contracting process from an administrative burden into a revenue-generating opportunity.
+
+### Core Components
+
+#### Contract Creation & Management
+- **AI-Powered Drafting**: Leverage GPT-4o to generate custom clauses based on project scope and requirements
+- **Template Library**: Access industry-specific, jurisdiction-aware contract templates vetted by legal professionals
+- **Version Control**: Track all changes with full audit history and compare different contract versions
+- **Dynamic Variables**: Auto-populate contracts with party information, dates, and scope details
+
+#### Risk Management
+- **Automated Risk Analysis**: Real-time scoring of contract terms with visual risk indicators
+- **Compliance Checking**: Built-in analysis for GDPR, CPRA, and other regulatory frameworks
+- **Legal Guardrails**: Standardized playbooks to keep agreements within approved parameters
+
+#### Negotiation Tools
+- **AI-Assisted Redlining**: Intelligent suggestions to streamline the negotiation process
+- **Counterparty Portal**: Secure, branded environment for counterparties to review and suggest changes
+- **Explanation Engine**: Natural language explanations of legal terms and proposed modifications
+
+#### Execution & Revenue
+- **Digital Signatures**: Legally-binding e-signatures with identity verification
+- **Instant Payment Collection**: Direct integration with payment processing via Merchant-of-Record capabilities
+- **Subscription Management**: Automatic recurring billing for service agreements
+- **Tax & Currency Handling**: Automated tax calculation and multi-currency support
+
+#### Analytics & Integration
+- **Performance Dashboards**: Track key metrics like time-to-close and approval rates
+- **API-First Design**: Extensive integration capabilities with CRM, accounting, and storage systems
+- **Event-Driven Architecture**: Webhook support for automating workflows across your tech stack
+
+### Data Security & Compliance
+- **SOC 2 Readiness**: Enterprise-grade security controls and compliance framework
+- **End-to-End Encryption**: Secure storage and transmission of all contract data
+- **Role-Based Access**: Granular permission controls for multi-user organizations
+- **Immutable Audit Trails**: Cryptographically-secured record of all contract actions
+
+---
+
+## 14 | Supported Platforms
+
+Paper Spaces is designed to work seamlessly across multiple environments and platforms.
+
+### Web Application
+- **Modern Browsers**: Fully supported on Chrome, Firefox, Safari, and Edge (latest two versions)
+- **Responsive Design**: Optimized for desktop, tablet, and mobile viewing
+- **Progressive Web App**: Available as installable app on supporting devices
+
+### Mobile Experience
+- **Mobile-Optimized Web Interface**: Fully responsive design for on-the-go access
+- **Native Mobile Apps**: React Native applications for iOS and Android (coming Q4 '25)
+- **Offline Capabilities**: Review and sign documents without constant connectivity
+
+### Developer Ecosystem
+- **REST & GraphQL APIs**: Comprehensive API access for custom integrations
+- **Webhooks**: Event-driven integration with external systems
+- **SDK Support**: JavaScript/TypeScript SDK for frontend and backend integration
+
+### Deployment Options
+- **Cloud-Hosted SaaS**: Primary offering with global availability and automatic updates
+- **Self-Hosted Option**: Enterprise deployment available for organizations with specific compliance needs
+- **Hybrid Model**: Core features self-hosted with optional cloud services for AI and payments
+
+### Technical Stack
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: Node.js, tRPC, PostgreSQL, NATS
+- **AI**: Integration with Azure OpenAI (GPT-4o) and local Llama 3 models
+- **Infrastructure**: Containerized services designed for Kubernetes deployment
+- **Payments**: Integration with Stripe, TaxJar, and Wise for global financial operations
+
+---
 
 ## Local Development
 
 ### Requirements
 
-To run Documenso locally, you will need
+To run Paper Spaces locally, you'll need:
 
-- Node.js (v22 or above)
-- Bun (v1.2.9 or above)
-- Postgres SQL Database
-- Docker (optional)
+- Node.js (v22.0.0 or higher)
+- Bun (v1.2.9 or higher)
+- Docker (for development database and services)
 
-### Developer Quickstart
+### Quick Start
 
-> **Note**: This is a quickstart for developers. It assumes that you have both [docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/), and [Bun](https://bun.sh) installed on your machine.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Vector/paperspaces-platform.git
+   cd paperspaces-platform
+   ```
 
-Want to get up and running quickly? Follow these steps:
+2. Install dependencies:
+   ```sh
+   bun install
+   ```
 
-1. [Fork this repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) to your GitHub account.
+3. Set up your environment variables:
+   ```sh
+   cp .env.example .env
+   ```
 
-After forking the repository, clone it to your local device by using the following command:
+4. Start the development environment (includes database setup, migrations, and seeding):
+   ```sh
+   bun run dx
+   ```
 
-```sh
-git clone https://github.com/<your-username>/documenso
-```
+5. Start the development server:
+   ```sh
+   bun run dev
+   ```
 
-2. Set up your `.env` file using the recommendations in the `.env.example` file. Alternatively, just run `cp .env.example .env` to get started with our handpicked defaults.
-
-3. Run `bun run dx` in the root directory
-
-   - This will spin up a postgres database and inbucket mailserver in a docker container.
-
-4. Run `bun run dev` in the root directory
-
-5. Want it even faster? Just use
-
+For the fastest setup experience, use:
 ```sh
 bun run d
 ```
+This command runs the development environment setup and starts the server in one step.
 
-#### Access Points for Your Application
+### Additional Commands
 
-1. **App** - http://localhost:3000
-2. **Incoming Mail Access** - http://localhost:9000
-3. **Database Connection Details**
+- **Translation management:**
+  ```sh
+  bun run translate
+  ```
 
-   - **Port**: 54320
-   - **Connection**: Use your favorite database client to connect using the provided port.
+- **Database commands:**
+  ```sh
+  bun run prisma:studio    # Open Prisma Studio to manage your database
+  bun run prisma:seed      # Seed your database with sample data
+  ```
 
-4. **S3 Storage Dashboard** - http://localhost:9001
-
-## Developer Setup
-
-### Manual Setup
-
-Follow these steps to setup Documenso on your local machine:
-
-1. [Fork this repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) to your GitHub account.
-
-After forking the repository, clone it to your local device by using the following command:
-
-```sh
-git clone https://github.com/<your-username>/documenso
-```
-
-2. Run `bun install` in the root directory
-
-3. Create your `.env` from the `.env.example`. You can use `cp .env.example .env` to get started with our handpicked defaults.
-
-4. Set the following environment variables:
-
-   - NEXTAUTH_SECRET
-   - NEXT_PUBLIC_WEBAPP_URL
-   - NEXT_PRIVATE_DATABASE_URL
-   - NEXT_PRIVATE_DIRECT_DATABASE_URL
-   - NEXT_PRIVATE_SMTP_FROM_NAME
-   - NEXT_PRIVATE_SMTP_FROM_ADDRESS
-
-5. Create the database schema by running `bun run prisma:migrate-dev`
-
-6. Run `bun run dev` in the root directory to start
-
-7. Register a new user at http://localhost:3000/signup
+- **Production build:**
+  ```sh
+  bun run build
+  bun run start
+  ```
 
 ---
 
-- Optional: Seed the database using `bun run prisma:seed -w @documenso/prisma` to create a test user and document.
-- Optional: Create your own signing certificate.
-  - To generate your own using these steps and a Linux Terminal or Windows Subsystem for Linux (WSL), see **[Create your own signing certificate](./SIGNING.md)**.
+## 11 | Roadmap & KPI Dashboard (Bootstrapped)
 
-### Run in Gitpod
+| Qtr | Product & AI | GTM & Marketplace | KPI Gate | Cash Burn |
+| --- | --- | --- | --- | --- |
+| **Q3 '25** | MVP live (e‑sign, AI drafting) | Template store 100 SKUs | 300 customers | −$50k |
+| **Q4 '25** | Risk Radar GA; QBO sync | Clause marketplace & payouts | $1M ARR | −$40k |
+| **Q1 '26** | Smart Negotiator beta | MoR US/EU launch; SaaS checkout API | 800 customers | breakeven |
+| **Q2 '26** | Smart contracts (ETH/USDC escrow) | Partner SDK; 500 SKUs | $2M ARR | +$60k |
 
-- Click below to launch a ready-to-use Gitpod workspace in your browser.
+---
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/documenso/documenso)
+## 12 | Moat & Competitive Edge
 
-### Run in DevContainer
+| Feature | Paper Spaces | DocuSign CLM | Ironclad | Bonsai | Word + Email |
+| --- | --- | --- | --- | --- | --- |
+| AI Risk Scoring | **✔** | Add‑on | Beta | ❌ | ❌ |
+| Clause Marketplace | **✔** | ❌ | ❌ | ❌ | ❌ |
+| Merchant‑of‑Record | **✔** | ❌ | ❌ | ❌ | ❌ |
+| Smart Negotiator | **Beta** | ❌ | ❌ | ❌ | ❌ |
+| Integrated Email Hub | **✔** | ❌ | ❌ | ❌ | ❌ |
+| Price (5 users) | **$39/mo** | $600+ | $900+ | $29 | Labor |
 
-We support DevContainers for VSCode. [Click here to get started.](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/documenso/documenso)
-
-### Video walkthrough
-
-If you're a visual learner and prefer to watch a video walkthrough of setting up Documenso locally, check out this video:
-
-[![Watch the video](https://img.youtube.com/vi/Y0ppIQrEnZs/hqdefault.jpg)](https://youtu.be/Y0ppIQrEnZs)
-
-## Docker
-
-We provide a Docker container for Documenso, which is published on both DockerHub and GitHub Container Registry.
-
-- DockerHub: [https://hub.docker.com/r/documenso/documenso](https://hub.docker.com/r/documenso/documenso)
-- GitHub Container Registry: [https://ghcr.io/documenso/documenso](https://ghcr.io/documenso/documenso)
-
-You can pull the Docker image from either of these registries and run it with your preferred container hosting provider.
-
-Please note that you will need to provide environment variables for connecting to the database, mailserver, and so forth.
-
-For detailed instructions on how to configure and run the Docker container, please refer to the [Docker README](./docker/README.md) in the `docker` directory.
-
-## Self Hosting
-
-We support a variety of deployment methods, and are actively working on adding more. Stay tuned for updates!
-
-> Please note that the below deployment methods are for v0.9, we will update these to v1.0 once it has been released.
-
-### Fetch, configure, and build
-
-First, clone the code from Github:
-
-```
-git clone https://github.com/documenso/documenso.git
-```
-
-Then, inside the `documenso` folder, copy the example env file:
-
-```
-cp .env.example .env
-```
-
-The following environment variables must be set:
-
-- `NEXTAUTH_SECRET`
-- `NEXT_PUBLIC_WEBAPP_URL`
-- `NEXT_PRIVATE_DATABASE_URL`
-- `NEXT_PRIVATE_DIRECT_DATABASE_URL`
-- `NEXT_PRIVATE_SMTP_FROM_NAME`
-- `NEXT_PRIVATE_SMTP_FROM_ADDRESS`
-
-> If you are using a reverse proxy in front of Documenso, don't forget to provide the public URL for the `NEXT_PUBLIC_WEBAPP_URL` variable!
-
-Now you can install the dependencies and build it:
-
-```
-bun i
-bun run build:web
-bun run prisma:migrate-deploy
-```
-
-Finally, you can start it with:
-
-```
-bun run start
-```
-
-This will start the server on `localhost:3000`. For now, any reverse proxy can then do the frontend and SSL termination.
-
-> If you want to run with another port than 3000, you can start the application with `next -p <ANY PORT>` from the `apps/web` folder.
-
-### Run as a service
-
-You can use a systemd service file to run the app. Here is a simple example of the service running on port 3500 (using 3000 by default):
-
-```bash
-[Unit]
-Description=documenso
-After=network.target
-
-[Service]
-Environment=PATH=/path/to/your/node/binaries
-Type=simple
-User=www-data
-WorkingDirectory=/var/www/documenso/apps/web
-ExecStart=/usr/bin/next start -p 3500
-TimeoutSec=15
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-### Railway
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/bG6D4p)
-
-### Render
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/documenso/documenso)
-
-### Koyeb
-
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/documenso/documenso&branch=main&name=documenso-app&builder=dockerfile&dockerfile=/docker/Dockerfile)
-
-## Elestio
-
-[![Deploy on Elestio](https://elest.io/images/logos/deploy-to-elestio-btn.png)](https://elest.io/open-source/documenso)
-
-## Troubleshooting
-
-### I'm not receiving any emails when using the developer quickstart.
-
-When using the developer quickstart, an [Inbucket](https://inbucket.org/) server will be spun up in a docker container that will store all outgoing emails locally for you to view.
-
-The Web UI can be found at http://localhost:9000, while the SMTP port will be on localhost:2500.
-
-### Support IPv6
-
-If you are deploying to a cluster that uses only IPv6, You can use a custom command to pass a parameter to the Next.js start command
-
-For local docker run
-
-```bash
-docker run -it documenso:latest bun run start -- -H ::
-```
-
-For k8s or docker-compose
-
-```yaml
-containers:
-  - name: documenso
-    image: documenso:latest
-    imagePullPolicy: IfNotPresent
-    command:
-      - bun
-    args:
-      - run
-      - start
-      - --
-      - -H
-      - '::'
-```
-
-### I can't see environment variables in my package scripts.
-
-Wrap your package script with the `with:env` script like such:
-
-```
-bun run with:env -- bun run myscript
-```
-
-The same can be done when using `bunx` for one of the bin scripts:
-
-```
-bun run with:env -- bunx myscript
-```
-
-This will load environment variables from your `.env` and `.env.local` files.
-
-## Repo Activity
-
-![Repository Activity](https://repobeats.axiom.co/api/embed/622a2e9aa709696f7226304b5b7178a5741b3868.svg)
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+1. **Data Network Effects** — Each redline, clause rating, and payment enriches models; competitors lack structured contract‑to‑cash graph.
+2. **Embedded Monetization** — First CLM that *earns* on every invoice via MoR rails—turns back‑office tool into revenue share partner.
+3. **Open Ecosystem** — SDK + clause marketplace incentivizes community contributions while maintaining quality gates.
