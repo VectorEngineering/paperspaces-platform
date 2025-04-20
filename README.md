@@ -1,7 +1,5 @@
 # **Paper Spaces — AI‑First Contract Commerce OS**
 
-## 1 | Vision
-
 **Democratize world‑class contract lifecycle management (CLM) for 50 million freelancers and lean startups, while embedding a *zero‑friction SaaS commerce layer* inside every agreement.**
 
 Paper Spaces unifies AI drafting, risk review, negotiation, execution, and revenue collection so founders close deals faster *and* software vendors get paid—without lawyers, payment gateways, or tax headaches.
