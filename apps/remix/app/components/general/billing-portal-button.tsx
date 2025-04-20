@@ -1,8 +1,9 @@
-import { Button } from '@documenso/ui/primitives/button';
-import { Trans } from '@lingui/react/macro';
 import { msg } from '@lingui/core/macro';
-import { trpc } from '@documenso/trpc/react';
 import { useLingui } from '@lingui/react';
+import { Trans } from '@lingui/react/macro';
+
+import { trpc } from '@documenso/trpc/react';
+import { Button } from '@documenso/ui/primitives/button';
 import { useToast } from '@documenso/ui/primitives/use-toast';
 
 export type BillingPortalButtonProps = {
@@ -17,7 +18,7 @@ export const BillingPortalButton = ({ buttonProps, children }: BillingPortalButt
   const { mutateAsync: createBillingPortal, isPending } =
     trpc.profile.createBillingPortal.useMutation({
       onSuccess: (sessionUrl) => {
-        window.open(sessionUrl.url, '_blank');
+        window.open(sessionUrl, '_blank');
       },
       onError: (err) => {
         let description = _(

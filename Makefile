@@ -1,4 +1,4 @@
-.PHONY: help setup dev quick-dev build test lint format clean docker-build docker-run docker-test docker-compose-up docker-compose-down prisma-generate prisma-migrate prisma-seed prisma-studio start replace-ee-imports
+.PHONY: help setup dev quick-dev build test lint format clean docker-build docker-run docker-test docker-compose-up docker-compose-down prisma-generate prisma-migrate prisma-seed prisma-studio start
 
 # Default target when just running `make`
 help:
@@ -26,7 +26,6 @@ help:
 	@echo "  make dev-setup          - Full development setup (database, dependencies, migrations, seed)"
 	@echo "  make e2e                - Run E2E tests"
 	@echo "  make deploy             - Deploy the application"
-	@echo "  make replace-ee-imports - Replace @documenso/ee imports with @documenso/ee-stub"
 
 # Setup development environment
 setup:
@@ -152,30 +151,3 @@ deploy: build
 	@echo "Deploying application..."
 	bun run prisma:migrate-deploy
 	bun run start
-
-# Replace EE imports with EE-stub
-replace-ee-imports:
-	@echo "Replacing @documenso/ee imports with @documenso/ee-stub..."
-	./scripts/replace-ee-imports.sh
-
-list-users:
-	docker exec database psql -U documenso -d documenso -c "SELECT id, name, email, SUBSTRING(password, 1, 20) as password_hash FROM \"User\" LIMIT 10;" | cat
-
-list-users-detailed:
-	docker exec database psql -U documenso -d documenso -c "SELECT id, name, email, roles, \"emailVerified\", \"lastSignedIn\" FROM \"User\" ORDER BY id LIMIT 10;" -t -A -F',' | column -t -s',' | cat
-
-list-users-with-passwords:
-	docker exec database psql -U documenso -d documenso -c "SELECT id, name, email, password FROM \"User\" ORDER BY id LIMIT 10;" -t -A -F',' | column -t -s',' | cat
-
-default-passwords:
-	@echo "Default passwords from the seed:"
-	@echo "  example@documenso.com:   password"
-	@echo "  admin@documenso.com:     password"
-	@echo "  test@documenso.com:      password"
-	@echo "  test2@documenso.com:     password"
-	@echo "  test3@documenso.com:     password"
-	@echo "  test4@documenso.com:     password"
-	@echo ""
-	@echo "E2E Test Account:"
-	@echo "  User:     $(shell grep E2E_TEST_AUTHENTICATE_USER_EMAIL .env | cut -d= -f2)"
-	@echo "  Password: $(shell grep E2E_TEST_AUTHENTICATE_USER_PASSWORD .env | cut -d= -f2)"

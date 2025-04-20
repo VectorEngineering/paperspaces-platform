@@ -4,10 +4,10 @@ import { redirect } from 'react-router';
 import { match } from 'ts-pattern';
 
 import { getSession } from '@documenso/auth/server/lib/utils/get-session';
-import { getStripeCustomerByUser } from '@documenso/ee-stub/server-only/stripe/get-customer';
-import { getPricesByInterval } from '@documenso/ee-stub/server-only/stripe/get-prices-by-interval';
-import { getPrimaryAccountPlanPrices } from '@documenso/ee-stub/server-only/stripe/get-primary-account-plan-prices';
-import { getProductByPriceId } from '@documenso/ee-stub/server-only/stripe/get-product-by-price-id';
+import { getStripeCustomerByUser } from '@documenso/ee/server-only/stripe/get-customer';
+import { getPricesByInterval } from '@documenso/ee/server-only/stripe/get-prices-by-interval';
+import { getPrimaryAccountPlanPrices } from '@documenso/ee/server-only/stripe/get-primary-account-plan-prices';
+import { getProductByPriceId } from '@documenso/ee/server-only/stripe/get-product-by-price-id';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { STRIPE_PLAN_TYPE } from '@documenso/lib/constants/billing';
 import { type Stripe } from '@documenso/lib/server-only/stripe';
@@ -32,27 +32,20 @@ export async function loader({ request }: Route.LoaderArgs) {
     throw redirect('/settings/profile');
   }
 
-  // Initialize the user's customer ID if needed
   if (!user.customerId) {
-    const result = await getStripeCustomerByUser({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      customerId: user.customerId,
-    });
-    // Don't use result.user as it might cause type issues
+    await getStripeCustomerByUser(user).then((result) => result.user);
   }
 
-  // Get subscriptions and pricing data
-  const [subscriptions, priceData] = await Promise.all([
+  const [subscriptions, prices, primaryAccountPlanPrices] = await Promise.all([
     getSubscriptionsByUserId({ userId: user.id }),
     getPricesByInterval({ plans: [STRIPE_PLAN_TYPE.REGULAR, STRIPE_PLAN_TYPE.PLATFORM] }),
+    getPrimaryAccountPlanPrices(),
   ]);
 
-  // In a stub environment, we'll create an empty array of price IDs
-  const primaryAccountPlanPriceIds: string[] = [];
+  const primaryAccountPlanPriceIds = primaryAccountPlanPrices.map(({ id }) => id);
 
-  // Find the user's active subscription
+  let subscriptionProduct: Stripe.Product | null = null;
+
   const primaryAccountPlanSubscriptions = subscriptions.filter(({ priceId }) =>
     primaryAccountPlanPriceIds.includes(priceId),
   );
@@ -61,8 +54,6 @@ export async function loader({ request }: Route.LoaderArgs) {
     primaryAccountPlanSubscriptions.find(({ status }) => status === SubscriptionStatus.ACTIVE) ??
     primaryAccountPlanSubscriptions[0];
 
-  // Get the subscription product details
-  let subscriptionProduct = null;
   if (subscription?.priceId) {
     subscriptionProduct = await getProductByPriceId({ priceId: subscription.priceId }).catch(
       () => null,
@@ -73,9 +64,9 @@ export async function loader({ request }: Route.LoaderArgs) {
     !subscription || subscription.status === SubscriptionStatus.INACTIVE;
 
   return superLoaderJson({
-    prices: priceData,
+    prices,
     subscription,
-    subscriptionProductName: subscriptionProduct?.name || 'Basic',
+    subscriptionProductName: subscriptionProduct?.name,
     isMissingOrInactiveOrFreePlan,
   });
 }

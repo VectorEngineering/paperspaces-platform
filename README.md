@@ -91,8 +91,7 @@ Contact us if you are interested in our Enterprise plan for large organizations 
 - [@documenso/pdf-sign](https://www.npmjs.com/package/@documenso/pdf-sign) - PDF Signatures (launching soon)
 - [React-PDF](https://github.com/wojtekmaj/react-pdf) - Viewing PDFs
 - [PDF-Lib](https://github.com/Hopding/pdf-lib) - PDF manipulation
-- [Bun](https://bun.sh/) - JavaScript runtime and package manager
-- [@documenso/ee-stub](./packages/ee-stub) - Stub implementations for Enterprise Edition features
+- [Stripe](https://stripe.com/) - Payments
 
 <!-- - Support for [opensignpdf (requires Java on server)](https://github.com/open-pdf-sign) is currently planned. -->
 
@@ -145,26 +144,6 @@ bun run d
    - **Connection**: Use your favorite database client to connect using the provided port.
 
 4. **S3 Storage Dashboard** - http://localhost:9001
-
-### Authentication for Development
-
-When running Documenso locally using the seed data, the following accounts are available:
-
-| Email                 | Password | Role  |
-| --------------------- | -------- | ----- |
-| admin@documenso.com   | password | Admin |
-| example@documenso.com | password | User  |
-| test@documenso.com    | password | User  |
-| test2@documenso.com   | password | User  |
-| test3@documenso.com   | password | User  |
-| test4@documenso.com   | password | User  |
-
-For E2E testing, you can also use:
-
-- Email: testuser@mail.com
-- Password: test_Password123
-
-You can view these credentials anytime by running `make default-passwords` in the project root.
 
 ## Developer Setup
 
