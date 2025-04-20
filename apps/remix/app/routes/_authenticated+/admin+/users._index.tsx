@@ -1,9 +1,12 @@
-import { AdminDashboardUsersTable } from '~/components/tables/admin-dashboard-users-table';
-import type { Route } from './+types/users._index';
-import { STRIPE_PLAN_TYPE } from '@documenso/lib/constants/billing';
 import { Trans } from '@lingui/react/macro';
+
+import { getPricesByPlan } from '@documenso/ee/server-only/stripe/get-prices-by-plan';
+import { STRIPE_PLAN_TYPE } from '@documenso/lib/constants/billing';
 import { findUsers } from '@documenso/lib/server-only/user/get-all-users';
-import { getPricesByPlan } from '@documenso/ee-stub/server-only/stripe/get-prices-by-plan';
+
+import { AdminDashboardUsersTable } from '~/components/tables/admin-dashboard-users-table';
+
+import type { Route } from './+types/users._index';
 
 export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
@@ -12,16 +15,12 @@ export async function loader({ request }: Route.LoaderArgs) {
   const perPage = Number(url.searchParams.get('perPage')) || 10;
   const search = url.searchParams.get('search') || '';
 
-  const [{ users, totalPages }, prices] = await Promise.all([
+  const [{ users, totalPages }, individualPrices] = await Promise.all([
     findUsers({ username: search, email: search, page, perPage }),
-    getPricesByPlan([STRIPE_PLAN_TYPE.REGULAR, STRIPE_PLAN_TYPE.COMMUNITY]).catch(() => ({
-      community: [],
-      enterprise: [],
-    })),
+    getPricesByPlan([STRIPE_PLAN_TYPE.REGULAR, STRIPE_PLAN_TYPE.COMMUNITY]).catch(() => []),
   ]);
 
-  // In a stub environment, we don't have real prices, so we'll create an empty array
-  const individualPriceIds: string[] = [];
+  const individualPriceIds = individualPrices.map((price) => price.id);
 
   return {
     users,

@@ -26,6 +26,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         style={
+          // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
           {
             '--card-gradient-degrees': `${degrees}deg`,
           } as React.CSSProperties

@@ -1,8 +1,9 @@
-import { Button } from '@documenso/ui/primitives/button';
-import { Trans } from '@lingui/react/macro';
 import { msg } from '@lingui/core/macro';
-import { trpc } from '@documenso/trpc/react';
 import { useLingui } from '@lingui/react';
+import { Trans } from '@lingui/react/macro';
+
+import { trpc } from '@documenso/trpc/react';
+import { Button } from '@documenso/ui/primitives/button';
 import { useToast } from '@documenso/ui/primitives/use-toast';
 
 export type TeamBillingPortalButtonProps = {
@@ -21,7 +22,7 @@ export const TeamBillingPortalButton = ({ buttonProps, teamId }: TeamBillingPort
     try {
       const sessionUrl = await createBillingPortal({ teamId });
 
-      window.open(sessionUrl.url, '_blank');
+      window.open(sessionUrl, '_blank');
     } catch (err) {
       toast({
         title: _(msg`Something went wrong`),

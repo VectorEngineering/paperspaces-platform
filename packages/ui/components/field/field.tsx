@@ -76,6 +76,7 @@ export function FieldContainerPortal({
   const coords = useFieldPageCoords(field);
 
   const isCheckboxOrRadioField = field.type === 'CHECKBOX' || field.type === 'RADIO';
+  const isFieldSigned = field.inserted;
 
   const style = {
     top: `${coords.y}px`,

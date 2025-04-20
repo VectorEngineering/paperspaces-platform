@@ -2,22 +2,16 @@ import { Prisma, TeamMemberRole } from '@prisma/client';
 import type Stripe from 'stripe';
 import { z } from 'zod';
 
-import { createTeamCustomer } from '@documenso/ee-stub/server-only/stripe/create-team-customer';
-import { getTeamRelatedPrices } from '@documenso/ee-stub/server-only/stripe/get-team-related-prices';
-import { mapStripeSubscriptionToPrismaUpsertAction } from '@documenso/ee-stub/server-only/stripe/webhook/on-subscription-updated';
-import { isDocumentPlatform as isUserPlatformPlan } from '@documenso/ee-stub/server-only/util/is-document-platform';
+import { createTeamCustomer } from '@documenso/ee/server-only/stripe/create-team-customer';
+import { getTeamRelatedPrices } from '@documenso/ee/server-only/stripe/get-team-related-prices';
+import { mapStripeSubscriptionToPrismaUpsertAction } from '@documenso/ee/server-only/stripe/webhook/on-subscription-updated';
+import { isDocumentPlatform as isUserPlatformPlan } from '@documenso/ee/server-only/util/is-document-platform';
 import { IS_BILLING_ENABLED } from '@documenso/lib/constants/app';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import { subscriptionsContainsActivePlan } from '@documenso/lib/utils/billing';
 import { prisma } from '@documenso/prisma';
 
 import { stripe } from '../stripe';
-
-// Define an interface for the price objects we expect to receive
-interface PriceObject {
-  id: string | number;
-  [key: string]: unknown;
-}
 
 export type CreateTeamOptions = {
   /**
@@ -76,18 +70,9 @@ export const createTeam = async ({
   let customerId: string | null = null;
 
   if (IS_BILLING_ENABLED()) {
-    // Get team-related price IDs using type assertion to avoid TypeScript errors
-    const teamRelatedPriceIds = await getTeamRelatedPrices().then((prices) => {
-      if (!Array.isArray(prices)) return [];
-
-      return prices
-        .filter((p) => p !== null && typeof p === 'object')
-        .map((price) => {
-          const p = price as { id?: string | number };
-          return typeof p.id === 'string' || typeof p.id === 'number' ? String(p.id) : '';
-        })
-        .filter(Boolean);
-    });
+    const teamRelatedPriceIds = await getTeamRelatedPrices().then((prices) =>
+      prices.map((price) => price.id),
+    );
 
     const hasTeamRelatedSubscription = subscriptionsContainsActivePlan(
       user.subscriptions,
@@ -284,35 +269,9 @@ export const createTeamFromPendingTeam = async ({
       },
     });
 
-    // Cast the mapStripeSubscriptionToPrismaUpsertAction result to include necessary Prisma fields
-    const subscriptionData = mapStripeSubscriptionToPrismaUpsertAction(
-      subscription,
-      undefined,
-      team.id,
+    await tx.subscription.upsert(
+      mapStripeSubscriptionToPrismaUpsertAction(subscription, undefined, team.id),
     );
-
-    await tx.subscription.upsert({
-      where: {
-        planId: 'team_plan', // Use unique planId as the identifier
-      },
-      create: {
-        planId: 'team_plan',
-        priceId: subscriptionData.priceId,
-        status: 'ACTIVE', // Use enum value directly
-        teamId: team.id,
-        cancelAtPeriodEnd: subscriptionData.cancelAtPeriodEnd,
-        createdAt: subscriptionData.created,
-        updatedAt: subscriptionData.updated,
-        periodEnd: subscriptionData.currentPeriodEnd,
-      },
-      update: {
-        priceId: subscriptionData.priceId,
-        status: 'ACTIVE',
-        cancelAtPeriodEnd: subscriptionData.cancelAtPeriodEnd,
-        updatedAt: subscriptionData.updated,
-        periodEnd: subscriptionData.currentPeriodEnd,
-      },
-    });
 
     return team;
   });
